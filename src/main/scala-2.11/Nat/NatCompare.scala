@@ -6,6 +6,7 @@ import Nat._
 trait LT[A <: Nat, B <: Nat]
 
 object LT {
+  // こうすると A < B という型表記が可能になる。
   type <[A <: Nat, B <: Nat] = LT[A, B]
 
   // if true then: 0 < n
