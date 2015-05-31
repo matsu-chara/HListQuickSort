@@ -27,7 +27,6 @@ object LTEqs {
   // headが基準値より大きかったらheadを結果に加えない(無視する)。
   // if (LtEqsGreater(T, A) is defined_and_result_is lts) and (A < H) then:
   //   LtEqsLower(H :: T) should_be lts.Out
-  // (本当は should_be LTEqs[H :: T, A] { type Out = lts.Out }だけど冗長なので省略)
   implicit def hlistLTEqsGreater[A <: Nat, H <: Nat, T <: HList, LtsOut <: HList](implicit lts: LTEqs[T, A, LtsOut], l: A < H) =
     new LTEqs[H :: T, A, LtsOut] {}
 
